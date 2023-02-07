@@ -5,7 +5,7 @@ import { useQuery } from "react-query"
 
 function App() {
   return (
-    <div className="text-green-500">
+    <div className="">
       <FetchSummonerData />
     </div>
   )
@@ -13,7 +13,7 @@ function App() {
 
   function FetchSummonerData() {
     const { isLoading, error, data } = useQuery('summonerData', () =>
-      fetch('http://localhost:8080/summoner/milkku').then(res =>
+      fetch('http://localhost:8080/summonerExample').then(res =>
         res.json()
       )
     )
@@ -22,14 +22,16 @@ function App() {
   
     if (error) return 'An error has occurred: ' + error.message
 
+    console.log(data)
+
   
 
 
 return(
   <div>
-    <Profile profile={data.profile} />
-      <Mastery mastery={data.mastery} />
-      <Matches matches={data.matches} summonerName={data.profile.name} />
+    <Profile data = {data} />
+      <Mastery data = {data} />
+      <Matches data = {data} />
   </div>
 )
 

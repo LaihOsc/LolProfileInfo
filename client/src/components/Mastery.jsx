@@ -1,22 +1,14 @@
 import React from 'react'
 import MasteryObject from './MasteryObject'
-import { useQuery } from 'react-query'
 
-export default function Mastery({ mastery }) {
+export default function Mastery({ data }) {
 
-    const { isLoading, error, data } = useQuery('championJson', () =>
-      fetch('http://ddragon.leagueoflegends.com/cdn/13.1.1/data/en_US/champion.json').then(res =>
-        res.json()
-      )
-    )
-  
-    if (isLoading) return 'Loading...'
-  
-    if (error) return 'An error has occurred: ' + error.message
+  const mastery = data.mastery
 
-    const champs = Object.values(data.data)
+  const champion = data.champion
+
+    const champs = Object.values(champion)
     const champ = champs.find(({ key }) => key == `${mastery[0].championId}`)
-    console.log(champ)
 
   return (
     <div>

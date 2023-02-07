@@ -4,7 +4,6 @@ export default function MasteryObject({ champion, champName }) {
 
     const { championId, championLevel, championPoints } = champion
 
-    console.log(championId, championLevel, championPoints)
 
   return (
     <div>

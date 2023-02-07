@@ -1,6 +1,8 @@
 import React from 'react'
 
-export default function Profile({ profile }) {
+export default function Profile({ data }) {
+
+  const profile = data.profile
 
     const { name, profileIconId, summonerLevel } = profile
 
