@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default function PlayerStat({player, data, team}) {
+export default function PlayerStat({player, data}) {
 
     const summonerData = data.summoner
     const runeData = data.runes
@@ -23,32 +23,38 @@ export default function PlayerStat({player, data, team}) {
 
   return (
     <div>
-      <div className={`flex text-center h-full m-auto ${team}`}>
+      <div className={`flex text-center h-20 m-auto`}>
         <div className='w-5/12 border flex'>
 
-        <div className='relative w-fit'>  
+        <div className='relative w-fit p-2'>  
+
+        {/*  Champion Image  */}
       <img className='w-16 h-16' src={`https://ddragon.leagueoflegends.com/cdn/13.1.1/img/champion/${player.championName}.png`} alt="" />
-      <p className='bg-black text-white w-fit h-fit p-1 border text-xs border-white absolute translate-x-10 -translate-y-6'>{player.champLevel}</p>
+      <p className={` text- w-fit h-fit p-1 border text-xs absolute translate-x-10 -translate-y-6`}>{player.champLevel}</p>
       </div>
 
-      <div>
-        <img className='w-8 h-8' src={`http://ddragon.leagueoflegends.com/cdn/13.1.1/img/spell/${summoner1}.png`} alt={summoner1} />
-        <img className='w-8 h-8' src={`http://ddragon.leagueoflegends.com/cdn/13.1.1/img/spell/${summoner2}.png`} alt={summoner2} />
-      </div>
+          {/*  Summoner Spells  */}
+          <div className='p-2'>
+            <img className='w-8 h-8' src={`http://ddragon.leagueoflegends.com/cdn/13.1.1/img/spell/${summoner1}.png`} alt={summoner1} />
+            <img className='w-8 h-8' src={`http://ddragon.leagueoflegends.com/cdn/13.1.1/img/spell/${summoner2}.png`} alt={summoner2} />
+          </div>
 
-      <div>
-        <img className='w-8 h-8' src={`https://ddragon.canisback.com/img/${keyStoneObject.icon}`} />
-        <img className='w-8 h-8' src={`https://ddragon.canisback.com/img/${secondaryStyleObject.icon}`} />
-      </div>
+          {/*  Runes  */}
+          <div className='p-2'>
+            <img className='w-8 h-8' src={`https://ddragon.canisback.com/img/${keyStoneObject.icon}`} />
+            <img className='w-8 h-8' src={`https://ddragon.canisback.com/img/${secondaryStyleObject.icon}`} />
+          </div>
 
 
         </div>
-        <div className='w-1/12 border'>{`${player.kills} / ${player.deaths} / ${player.assists}`}</div>
-        <div className='w-1/12 border'>{player.totalDamageDealtToChampions}</div>
-        <div className='w-1/12 border'>{player.goldEarned}</div>
-        <div className='w-1/12 border'>{player.totalMinionsKilled}</div>
-        <div className='w-1/12 border'>{player.visionScore}</div>
-        <div className='w-3/12 border'>
+
+        {/*  Stats  */}
+        <div className='w-1/12 h-full border flex justify-center items-center'><p>{`${player.kills} / ${player.deaths} / ${player.assists}`}</p></div>
+        <div className='w-1/12 border flex justify-center items-center'><p>{player.totalDamageDealtToChampions}</p></div>
+        <div className='w-1/12 border flex justify-center items-center'><p>{player.goldEarned}</p></div>
+        <div className='w-1/12 border flex justify-center items-center'><p>{player.totalMinionsKilled}</p></div>
+        <div className='w-1/12 border flex justify-center items-center'><p>{player.visionScore}</p></div>
+        <div className='w-2/12 border'>
             <div className='flex justify-around'>{playerItems1.map(item => !item==0 ? <img className='w-8 h-8' src={`http://ddragon.leagueoflegends.com/cdn/13.1.1/img/item/${item}.png`} alt='' /> : <img className='w-8 h-8' src={`http://ddragon.leagueoflegends.com/cdn/13.1.1/img/item/7050.png`} alt='' />)}</div>
             <div className='flex justify-around'>{playerItems2.map(item => !item==0 ? <img className='w-8 h-8' src={`http://ddragon.leagueoflegends.com/cdn/13.1.1/img/item/${item}.png`} alt='' /> : <img className='w-8 h-8' src={`http://ddragon.leagueoflegends.com/cdn/13.1.1/img/item/7050.png`} alt='' />)}</div>
             </div>

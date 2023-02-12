@@ -7,7 +7,7 @@ const getExampleDataRoute = require('./routes/getExampleDataRoute')
 
 
 
-router.get('/summoner/:name', getSummonerDataRoute)
+router.get('/summoner/:region/:name', getSummonerDataRoute)
 router.get('/summonerExample', getExampleDataRoute)
 
 module.exports = router

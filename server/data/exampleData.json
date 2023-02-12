@@ -8,6 +8,52 @@
         "revisionDate": 1675621464247,
         "summonerLevel": 444
     },
+    "images": {
+        "ranks": {
+            "iron": "https://static.wikia.nocookie.net/leagueoflegends/images/f/fe/Season_2022_-_Iron.png",
+            "bronze": "https://static.wikia.nocookie.net/leagueoflegends/images/e/e9/Season_2022_-_Bronze.png",
+            "silver": "https://static.wikia.nocookie.net/leagueoflegends/images/4/44/Season_2022_-_Silver.png",
+            "gold": "https://static.wikia.nocookie.net/leagueoflegends/images/8/8d/Season_2022_-_Gold.png",
+            "platinum": "https://static.wikia.nocookie.net/leagueoflegends/images/3/3b/Season_2022_-_Platinum.png",
+            "diamond": "https://static.wikia.nocookie.net/leagueoflegends/images/e/ee/Season_2022_-_Diamond.png",
+            "master": "https://static.wikia.nocookie.net/leagueoflegends/images/e/eb/Season_2022_-_Master.png",
+            "grandmaster": "https://static.wikia.nocookie.net/leagueoflegends/images/f/fc/Season_2022_-_Grandmaster.png",
+            "challenger": "https://static.wikia.nocookie.net/leagueoflegends/images/0/02/Season_2022_-_Challenger.png"
+            }
+    },
+
+    "ranked": [
+        {
+            "leagueId": "da40d7c1-073d-4e42-89ce-74cfc71cd206",
+            "queueType": "RANKED_FLEX_SR",
+            "tier": "GOLD",
+            "rank": "III",
+            "summonerId": "ItZXdHQCC8Yy5FGcoMfZh-G8EueDEn1Dhozv-32YjJN9Tjk",
+            "summonerName": "likanisol",
+            "leaguePoints": 16,
+            "wins": 8,
+            "losses": 6,
+            "veteran": false,
+            "inactive": false,
+            "freshBlood": true,
+            "hotStreak": false
+        },
+        {
+            "leagueId": "244e6bf2-2c67-4f04-a54a-2dcb63263a25",
+            "queueType": "RANKED_SOLO_5x5",
+            "tier": "SILVER",
+            "rank": "IV",
+            "summonerId": "ItZXdHQCC8Yy5FGcoMfZh-G8EueDEn1Dhozv-32YjJN9Tjk",
+            "summonerName": "likanisol",
+            "leaguePoints": 52,
+            "wins": 6,
+            "losses": 7,
+            "veteran": false,
+            "inactive": false,
+            "freshBlood": false,
+            "hotStreak": false
+        }
+    ],
     "mastery": [
         {
             "championId": 412,
