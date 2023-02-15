@@ -6,7 +6,7 @@ import { Divider } from '@mui/material'
 export default function Sidebar({handleTabChange}) {
   return (
       <div className='w-1/6 bg-gray-900 text-gray-200 fixed h-screen'>
-        <div className='h-1/6 flex justify-center items-center'><img src="https://i.pinimg.com/236x/db/d7/45/dbd74562d9c8e30188bf7c71e901ee85--teemo-chibi.jpg" alt="" srcset="" /></div>
+        <div className='h-1/6 flex justify-center items-center'><img src="https://i.pinimg.com/236x/db/d7/45/dbd74562d9c8e30188bf7c71e901ee85--teemo-chibi.jpg" alt="" /></div>
         <div className='h-4/6 w-full font-semibold text-lg'>
           <Divider className='bg-gray-200' />
           <div className='p-4'>

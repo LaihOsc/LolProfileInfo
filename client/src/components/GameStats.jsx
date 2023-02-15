@@ -1,7 +1,10 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import PlayerStat from './PlayerStat'
+import { DataContext } from '../DataContext'
 
-export default function GameStats({ players, data }) {
+export default function GameStats({ players }) {
+
+  const data = useContext(DataContext)
 
   const redTeam = 'bg-rose-900'
   const blueTeam = 'bg-indigo-900'
@@ -18,9 +21,9 @@ export default function GameStats({ players, data }) {
         <div className='w-2/12 border'>Items</div>
       </div>
 
-        {players.slice(0,5).map(player => <PlayerStat player={player} data={data} team={blueTeam}  />)}
+        {players.slice(0,5).map(player => <PlayerStat player={player} team={blueTeam}  />)}
         <div className={`w-5/12 border text-center ${redTeam}`}>{players[5].win ? 'Victory' : 'Defeat'} Red Team</div>
-        {players.slice(5,10).map(player => <PlayerStat player={player} data={data} team={redTeam} />)}
+        {players.slice(5,10).map(player => <PlayerStat player={player} team={redTeam} />)}
 
       
     </div>

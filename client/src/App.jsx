@@ -2,12 +2,13 @@ import Mastery from "./components/Mastery"
 import Matches from "./components/Matches"
 import Profile from "./components/Profile"
 import { useQuery } from "react-query"
-import { useState } from "react"
+import { createContext, useState } from "react"
 import { TextField, Select, MenuItem, IconButton, Paper, Divider, InputAdornment } from "@mui/material"
 import SearchIcon from '@mui/icons-material/Search'
 import ClipLoader from "react-spinners/ClipLoader";
 import { AccountBox, CurrencyBitcoin, Assessment, List, Search, LightMode, DarkMode} from '@mui/icons-material';
 import Sidebar from "./components/Sidebar"
+import { DataContext } from "./DataContext"
 
 
 function App() {
@@ -110,18 +111,18 @@ function App() {
 
     console.log(data)
 
-
-    
     
 
 return(
-  <div>
-        {tab == 'profile' 
-        ? <Profile data={data} /> : tab == 'mastery' 
-        ? <Mastery data={data}  darkMode={darkMode}/> : tab == 'matchHistory' 
-        ? <Matches data={data} /> : 'yeet'}
- 
-    </div>
+  <DataContext.Provider value={data} >
+    <>
+    {tab == 'profile' 
+        ? <Profile /> : tab == 'mastery' 
+        ? <Mastery  darkMode={darkMode}/> : tab == 'matchHistory' 
+        ? <Matches /> : 'yeet'}
+    </>
+  </DataContext.Provider>
+
 
 )
 

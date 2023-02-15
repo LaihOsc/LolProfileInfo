@@ -1,10 +1,15 @@
-import React, { useState } from 'react'
+import React, { useContext, useState, useRef } from 'react'
 import MasteryObject from './MasteryObject'
 import { Box, Card, TextField, InputAdornment, Paper } from '@mui/material'
 import { Search } from '@mui/icons-material'
+import { DataContext } from '../DataContext'
 
 
-export default function Mastery({ data, darkMode }) {
+export default function Mastery({ darkMode }) {
+
+  const searches = useRef(0)
+
+  const data = useContext(DataContext)
 
   const [champQuery, setChampQuery] = useState('')
 
@@ -13,11 +18,8 @@ export default function Mastery({ data, darkMode }) {
     console.log(champQuery)
   }
 
-  const mastery = data.mastery
+  const { mastery, champion } = data
 
-  const champs = Object.values(data.champion)
-
-  console.log(data.champion)
 
 
 
@@ -65,8 +67,10 @@ export default function Mastery({ data, darkMode }) {
 
     {mastery.map((mastery) => {
       
-      const champ = champs.find(({ key }) => key == mastery.championId)
+      const champ = champion[data.champKeyToId[mastery.championId]]
       const champName = champ.name.toLowerCase()
+      searches.current++
+      console.log(searches)
       return(
       champName.includes(champQuery.toLowerCase()) ? <MasteryObject key={champ.key} champMastery={mastery} champ={champ} darkMode={darkMode} /> : null)
     })}

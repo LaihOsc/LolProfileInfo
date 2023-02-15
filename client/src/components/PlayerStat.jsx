@@ -1,6 +1,9 @@
-import React from 'react'
+import React, { useContext } from 'react'
+import { DataContext } from '../DataContext'
 
-export default function PlayerStat({player, data}) {
+export default function PlayerStat({player}) {
+
+    const data = useContext(DataContext)
 
     const summonerData = data.summoner
     const runeData = data.runes

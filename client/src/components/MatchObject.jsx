@@ -1,11 +1,15 @@
-import React from 'react'
+import React, { useContext } from 'react'
 
 import { useState } from 'react'
+import { DataContext } from '../DataContext'
 import GameStats from './GameStats'
+import Item from './Item'
 
 
 
-export default function MatchObject({ match, data}) {
+export default function MatchObject({ match }) {
+
+  const data = useContext(DataContext)
 
   const [expanded, setExpanded] = useState(false)
 
@@ -38,7 +42,7 @@ export default function MatchObject({ match, data}) {
 
   return (
     <div>
-    <div className={`flex `}>
+    <div className={`p-4 border-b-2 flex justify-around text-left bg-white w-full`}>
       <h1>{player.win ? 'Win' : 'Loss'}</h1>
       <div className='relative w-fit'>  
       <img className='' src={`https://ddragon.leagueoflegends.com/cdn/13.1.1/img/champion/${player.championName}.png`} alt="" />
@@ -53,8 +57,8 @@ export default function MatchObject({ match, data}) {
         <img className='w-16 h-16' src={`https://ddragon.canisback.com/img/${secondaryStyleObject.icon}`} />
       </div>
 
-      <div className='flex flex-wrap'>
-        {playerItems.map(item => !item==0 ? <img className='w-16 h-16' src={`http://ddragon.leagueoflegends.com/cdn/13.1.1/img/item/${item}.png`} alt={item} /> : <img className='w-16 h-16' src={`http://ddragon.leagueoflegends.com/cdn/13.1.1/img/item/7050.png`} alt={summoner1} />)}
+      <div className='flex items-center'>
+        {playerItems.map(item => !item==0 ? <Item item={data.item[item]} /> : null)}
       </div>
     
     <button onClick={handleClick}>Expand</button>
@@ -63,7 +67,7 @@ export default function MatchObject({ match, data}) {
     {expanded ? 
 
 
-    <GameStats players={match.info['participants']} data={data} theme={theme} /> 
+    <GameStats players={match.info['participants']} data={data} /> 
     
     
     : null}
