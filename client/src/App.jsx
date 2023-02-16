@@ -84,7 +84,7 @@ function App() {
 
       </div>
       
-          <div className="">
+          <div className="w-5/6">
       {nameDone ? <FetchSummonerData summonerName={queryName} region={region} tab={tab} darkMode={darkMode} /> : null}
       </div>
       

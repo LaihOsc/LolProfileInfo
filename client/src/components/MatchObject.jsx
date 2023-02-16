@@ -5,6 +5,8 @@ import { DataContext } from '../DataContext'
 import GameStats from './GameStats'
 import Item from './Item'
 
+import { ExpandMore, ExpandLess } from '@mui/icons-material'
+
 
 
 export default function MatchObject({ match }) {
@@ -41,37 +43,62 @@ export default function MatchObject({ match }) {
 
 
   return (
-    <div>
-    <div className={`p-4 border-b-2 flex justify-around text-left bg-white w-full`}>
-      <h1>{player.win ? 'Win' : 'Loss'}</h1>
-      <div className='relative w-fit'>  
-      <img className='' src={`https://ddragon.leagueoflegends.com/cdn/13.1.1/img/champion/${player.championName}.png`} alt="" />
-      <p className={` w-fit h-fit p-1 border absolute translate-x-24 -translate-y-8`}>{player.champLevel}</p>
+    <>
+    <div className='p-4 border-b-2 flex justify-around text-left bg-white w-4/5 items-center'>
+    <div className='relative w-1/7'>  
+              <img className='w-24 h-24 border-4 border-black rounded-full' src={`https://ddragon.leagueoflegends.com/cdn/13.1.1/img/champion/${player.championName}.png`} alt="" />
+              <p className={` w-fit h-fit border-4 border-black absolute right-0 bottom-0 bg-white font-bold rounded-full`}>{player.champLevel}</p>
+              </div>
+              <div className='flex flex-col'>
+                <img className='w-8 h-8' src={`http://ddragon.leagueoflegends.com/cdn/13.1.1/img/spell/${summoner1}.png`} alt={summoner1} />
+                <img className='w-8 h-8' src={`http://ddragon.leagueoflegends.com/cdn/13.1.1/img/spell/${summoner2}.png`} alt={summoner2} />
+                </div>
+                <img className='w-16 h-16' src={`https://ddragon.canisback.com/img/${keyStoneObject.icon}`} />
+              
+      <div className='flex flex-col justify-center items-center w-2/7'>
+      <h1>{player.win ? <p className='text-green-700 font-bold'>Victory</p> : <p className='text-red-700 font-bold'>Defeat</p>}</h1>
+      <p>{match.info.gameMode}</p>
+      <p>{new Date(match.info.gameDuration * 1000).toISOString().substring(14, 19)}</p>
+
       </div>
-      <div>
-        <img src={`http://ddragon.leagueoflegends.com/cdn/13.1.1/img/spell/${summoner1}.png`} alt={summoner1} />
-        <img src={`http://ddragon.leagueoflegends.com/cdn/13.1.1/img/spell/${summoner2}.png`} alt={summoner2} />
-      </div>
-      <div>
-        <img className='w-16 h-16' src={`https://ddragon.canisback.com/img/${keyStoneObject.icon}`} />
-        <img className='w-16 h-16' src={`https://ddragon.canisback.com/img/${secondaryStyleObject.icon}`} />
+      <div className='flex flex-col w-2/7 justify-center'>
+      <div className='flex flex-wrap justify-start '>
+        {playerItems.map(item => !item==0 ? <Item item={data.item[item]} /> : <Item item={data.item[7050]} />)}
       </div>
 
-      <div className='flex items-center'>
-        {playerItems.map(item => !item==0 ? <Item item={data.item[item]} /> : null)}
+      <div className='flex justify-around w-2/7 items-center h-full'>
+        <p className=' h-full w-1/3'>{`${player.kills} / ${player.deaths} / ${player.assists}`}</p>
+        <p className=' h-full w-1/3 text-center'>{player.neutralMinionsKilled + player.totalMinionsKilled}</p>
+        <p className=' h-full w-1/3 text-right'>{player.goldEarned}</p>
       </div>
+
+      </div>
+
+     
+
+
+
+      
+
+    <div className='flex justify-between w-1/7'>
     
-    <button onClick={handleClick}>Expand</button>
+    <button className='flex justify-center self-center absolute hover:border' onClick={handleClick}>{expanded ? <ExpandLess /> : <ExpandMore />}</button>
     </div>
+      
 
-    {expanded ? 
 
 
-    <GameStats players={match.info['participants']} data={data} /> 
-    
-    
-    : null}
+   
+
 
     </div>
+     {expanded ? 
+
+
+      <GameStats players={match.info['participants']} data={data} /> 
+      
+      
+      : null}
+      </>
   )
 }

@@ -32,7 +32,7 @@ export default function Profile() {
         <Typography variant='h2'>{profile.name}</Typography>
         <div className='w-fit'>
         <img src={`http://ddragon.leagueoflegends.com/cdn/13.3.1/img/profileicon/${profile.profileIconId}.png`} alt="" />
-        <div className='flex justify-center'><p className='w-fit border-4 p-2 border-black'>{profile.summonerLevel}</p></div>
+        <div className='flex justify-center '><p className='w-fit border-4 p-2 border-black'>{profile.summonerLevel}</p></div>
         </div>
         </div>
         

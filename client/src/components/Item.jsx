@@ -11,7 +11,9 @@ export default function Item({item}) {
       <img 
       onMouseEnter={(e) => setAnchorEl(e.currentTarget)} 
       onMouseLeave={() => setAnchorEl(null)}
+      className={'w-12 h-12'}
       src={`http://ddragon.leagueoflegends.com/cdn/13.1.1/img/item/${item.image.full}`} alt="" />
+    
       <Popover
       className='p-4'
       sx={{pointerEvents: 'none'}}
@@ -44,7 +46,6 @@ export default function Item({item}) {
             </div>
             
             {item.plaintext}
-            {item.description}
         </div>
       </Popover>
     </div>
