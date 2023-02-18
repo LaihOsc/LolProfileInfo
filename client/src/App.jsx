@@ -23,6 +23,9 @@ function App() {
     setDarkMode(!darkMode)
   }
 
+  const handleInputChange = (e) => {
+    setQueryName(e.target.value)
+  }
 
   const handleSelectChange = (e) => {
     setRegion(e.target.value)
@@ -84,7 +87,7 @@ function App() {
           </FormControl>
           <TextField label={'Summoner Name'} variant='outlined'
 
-            
+            onChange={handleInputChange}
     
           />
 
@@ -120,8 +123,10 @@ function App() {
 
   function FetchSummonerData({ summonerName, region, tab, darkMode }) {
     const { isLoading, error, data } = useQuery('summonerData', () =>
-      fetch(`http://localhost:8080/summonerExample`).then(res =>
+      fetch(`http://localhost:8080/summoner/${region}/${summonerName}`).then(res =>
         res.json()
+        //Real request = http://localhost:8080/summoner/${region}/${summonerName}
+        //Example request = http://localhost:8080/summonerExample
       )
     )
   

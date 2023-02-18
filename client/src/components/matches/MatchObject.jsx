@@ -101,7 +101,7 @@ export default function MatchObject({ match }) {
      {expanded ? 
 
 
-      <GameStats players={match.info['participants']} data={data} /> 
+      <GameStats key={'gamestats'} players={match.info['participants']} data={data} /> 
       
       
       : null}

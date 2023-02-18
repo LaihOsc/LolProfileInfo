@@ -1,9 +1,8 @@
-import { Card, CircularProgress, Container, Popover, Typography } from '@mui/material'
-import React, { useContext, useState } from 'react'
+import { Typography } from '@mui/material'
+import React, { useContext } from 'react'
 import RankCard from './RankCard'
 import TopChamps from './TopChamps'
 import { DataContext } from '../../DataContext'
-import Item from '../universal/Item'
 
 
 export default function Profile() {
@@ -40,7 +39,7 @@ export default function Profile() {
       <RankCard   wr={wr} rankQueue={flex} img={data.images.ranks[flex.tier.toLowerCase()]} />
       
 
-      
+      {/* Website breaks if summoner hasn't played their placement games. To be fixed */}
 
 
     </div>

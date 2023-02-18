@@ -32,7 +32,7 @@ const handleInputChange = (e) => {
 
         {/*  Search Input  */}
         <div className= {`p-4 rounded-md`}>
-          <TextField label={'Champion Name'} onChange={(e) => setChampQuery(handleInputChange)} variant="outlined" 
+          <TextField label={'Champion Name'} onChange={handleInputChange} variant="outlined" 
           sx={{color: 'white'}}
           InputProps={{
             startAdornment: (

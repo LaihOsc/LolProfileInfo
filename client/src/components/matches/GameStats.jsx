@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import React from 'react'
 import TeamStat from './TeamStat'
 
 export default function GameStats({ players }) {
