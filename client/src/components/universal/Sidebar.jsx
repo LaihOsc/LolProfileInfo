@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { AccountBox, Assessment, List, CurrencyBitcoin } from '@mui/icons-material'
+import { AccountBox, Assessment, List } from '@mui/icons-material'
 import { Divider } from '@mui/material'
 
 export default function Sidebar({handleTabChange}) {

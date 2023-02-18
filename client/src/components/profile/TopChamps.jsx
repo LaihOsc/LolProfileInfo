@@ -8,11 +8,16 @@ export default function TopChamps() {
 
     const top3 = mastery.slice(0,3)
 
-    console.log(top3)
 
 
 
     return(<div className='flex w-1/3'>
-      {top3.map(obj => <Champ id={champion[champKeyToId[obj.championId]].id} src={images.masteries[obj.championLevel]} />)}
+      {top3.map(obj => 
+      <Champ 
+      key={obj.championId} 
+      id={champion[champKeyToId[obj.championId]].id} 
+      src={images.masteries[obj.championLevel]} 
+      />
+      )}
     </div>)
 }

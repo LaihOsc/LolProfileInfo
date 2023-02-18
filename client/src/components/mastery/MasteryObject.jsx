@@ -1,11 +1,9 @@
 import React from 'react'
 
-export default function MasteryObject({ champMastery, champ, darkMode }) {
-
-
+export default function MasteryObject({ champMastery, champ }) {
 
   return (
-    <div className={`${darkMode ? 'bg-gray-800 text-gray-200' : 'bg-white'} p-4 border-b-2 flex justify-around text-left`}>
+    <div className={`p-4 border-b-2 flex justify-around text-left bg-white dark:bg-gray-800`}>
       <div className='flex items-center justify-start w-full'>
         <img className='w-16 h-16 rounded-full' src={`http://ddragon.leagueoflegends.com/cdn/13.1.1/img/champion/${champ.id}.png`} alt="" />
         <p className='mx-2 italic'>{champ.name}</p>

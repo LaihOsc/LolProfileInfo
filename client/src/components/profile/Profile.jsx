@@ -1,9 +1,9 @@
 import { Card, CircularProgress, Container, Popover, Typography } from '@mui/material'
 import React, { useContext, useState } from 'react'
-import RankCard from './profile/RankCard'
-import TopChamps from './profile/TopChamps'
-import { DataContext } from '../DataContext'
-import Item from './Item'
+import RankCard from './RankCard'
+import TopChamps from './TopChamps'
+import { DataContext } from '../../DataContext'
+import Item from '../universal/Item'
 
 
 export default function Profile() {
@@ -17,7 +17,6 @@ export default function Profile() {
 
   const [soloDuo, flex] = [ranked[1], ranked[0]]
 
-  console.log(item[1001])
 
   const wr = (wins, losses) => Math.round((wins/(wins+losses))*100)
 
@@ -27,7 +26,7 @@ export default function Profile() {
 
   return (
     <>
-    <div className='flex p-2 h-fit'>
+    <div className='flex justify-center p-2 h-fit w-4/5'>
       <div className='w-1/3 bg-white rounded-lg m-2 text-center flex flex-col justify-center items-center'>
         <Typography variant='h2'>{profile.name}</Typography>
         <div className='w-fit'>
@@ -52,11 +51,6 @@ export default function Profile() {
       
     <TopChamps />
 
-    <div>
-      <Item item={item[1001]} />
-      <Item item={item[1001]} />
-      
-    </div>
       
     </div>
 
