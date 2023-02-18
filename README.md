@@ -2,11 +2,19 @@
 Simple profile viewer based on Riot API (MERN)
 
 Technologies used:
--Vite
--ReactJs
--TailWindCSS, Material UI
--ExpressJS
--NodeJs
+Vite
+
+ReactJs
+
+TailWindCSS, Material UI
+
+ExpressJS
+
+NodeJs
+
+
+Preview: 
+
 
 Profile tab. Still under work
 ![profile](https://user-images.githubusercontent.com/103920979/219901549-b9339b0e-4e02-41bd-801e-dc4838faab60.png)
